@@ -11,6 +11,7 @@ const SearchBar = ({ input, onChange }) => {
         name="query"
         className="input w-full text-2xl px-4 py-2 rounded-3xl border border-gray-500 mb-4"
         placeholder="Search..."
+        autoComplete="off"
         value={input}
         onChange={(e) => onChange(e.target.value)}
       />
