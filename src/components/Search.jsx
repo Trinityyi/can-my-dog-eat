@@ -5,7 +5,8 @@ import foodList from '../foodList';
 
 const Search = () => {
   const [input, setInput] = useState('');
-  const [filteredList, setFilteredList] = useState([]);
+  const [filteredList, setFilteredList] = useState(null);
+  const [result, setResult] = useState();
 
   const updateInput = (input) => {
     const filtered = foodList.filter((food) => {
@@ -13,13 +14,21 @@ const Search = () => {
     });
     setInput(input);
     setFilteredList(filtered);
-    console.log(filtered.map((x) => x.name));
+  };
+
+  const updateResults = (input) => {
+    const filtered = foodList.find((food) => {
+      return food.name.toLowerCase().includes(input.toLowerCase());
+    });
+    setInput(input);
+    setResult(filtered);
+    setFilteredList(null);
   };
 
   return (
     <div>
       <SearchBar input={input} onChange={updateInput} />
-      <SearchResults results={filteredList} />
+      <SearchResults results={result} />
     </div>
   );
 };
