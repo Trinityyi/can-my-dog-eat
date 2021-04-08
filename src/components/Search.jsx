@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SearchBar from './SearchBar';
+import SearchResults from './SearchResults';
 import foodList from '../foodList';
 
 const Search = () => {
@@ -18,6 +19,7 @@ const Search = () => {
   return (
     <div>
       <SearchBar input={input} onChange={updateInput} />
+      <SearchResults results={filteredList} />
     </div>
   );
 };
