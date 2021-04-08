@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SearchBar from './SearchBar';
 import SearchResults from './SearchResults';
+import Autocomplete from './Autocomplete';
 import foodList from '../foodList';
 
 const Search = () => {
@@ -28,6 +29,10 @@ const Search = () => {
   return (
     <div>
       <SearchBar input={input} onChange={updateInput} />
+      <Autocomplete
+        suggestions={!filteredList ? null : filteredList.map((x) => x.name)}
+        onClick={(x) => updateResults(x)}
+      />
       <SearchResults results={result} />
     </div>
   );
