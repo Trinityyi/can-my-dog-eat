@@ -27,14 +27,20 @@ const Search = () => {
   };
 
   return (
-    <div>
-      <SearchBar input={input} onChange={updateInput} />
-      <Autocomplete
-        suggestions={!filteredList ? null : filteredList.map((x) => x.name)}
-        onClick={(x) => updateResults(x)}
-      />
+    <>
+      <div
+        className={`search-input rounded-lg mb-5 relative ${
+          !filteredList ? '' : 'with-autocomplete'
+        }`}
+      >
+        <SearchBar input={input} onChange={updateInput} />
+        <Autocomplete
+          suggestions={!filteredList ? null : filteredList.map((x) => x.name)}
+          onClick={(x) => updateResults(x)}
+        />
+      </div>
       <SearchResults results={result} />
-    </div>
+    </>
   );
 };
 

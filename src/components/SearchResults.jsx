@@ -2,7 +2,7 @@ import React from 'react';
 
 const Results = ({ results }) => {
   return (
-    <div className="flex flex-col">
+    <div className="results">
       {!results ? (
         <div>We couldn't find anything for your search term.</div>
       ) : (
