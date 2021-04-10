@@ -16,7 +16,7 @@ const Search = () => {
       return food.name.toLowerCase().includes(inputString);
     });
     setInput(input);
-    setFilteredList(inputString === '' ? null : filtered);
+    setFilteredList(inputString === '' ? null : filtered.slice(0, 5));
     setPointer(-1);
   };
 
@@ -55,6 +55,7 @@ const Search = () => {
             updateResults(pointer === -1 ? input : filteredList[pointer].name);
           }
         }}
+        onBlur={() => setPointer(-1)}
       >
         <SearchBar input={input} onChange={updateInput} />
         <Autocomplete
