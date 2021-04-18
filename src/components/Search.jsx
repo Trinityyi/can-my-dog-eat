@@ -7,7 +7,7 @@ import foodList from '../foodList';
 const Search = () => {
   const [input, setInput] = useState('');
   const [filteredList, setFilteredList] = useState(null);
-  const [result, setResult] = useState();
+  const [result, setResult] = useState('');
   const [pointer, setPointer] = useState(-1);
 
   const updateInput = (input) => {
