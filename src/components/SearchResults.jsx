@@ -1,26 +1,26 @@
 import React from 'react';
 
 const iconNames = {
-  Yes: '/icons/check-circle.svg',
-  'In Moderation': '/icons/alert-circle-yellow.svg',
-  Harmful: '/icons/alert-circle-red.svg',
-  Toxic: '/icons/x-circle.svg'
+  Yes: '/static/check-circle.svg',
+  'In Moderation': '/static/alert-circle-yellow.svg',
+  Harmful: '/static/alert-circle-red.svg',
+  Toxic: '/static/x-circle.svg'
 };
 
 const Results = ({ results }) => {
   if (results === '') return null;
   return (
-    <div className="results text-lg w-full max-w-xl bg-white">
+    <div className="results text-lg w-full max-w-xl">
       {!results ? (
         <div className="p-4 text-center">We couldn't find anything for your search term.</div>
       ) : (
         <div
-          className={`rounded-lg border-8 p-4 shadow-md ${
+          className={`rounded-lg border-8 p-4 shadow-md my-4 ${
             results.canEat === 'No' ? 'border-red-500 bg-red-50' : 'border-green-500 bg-green-50'
           }`}
         >
           <img
-            className="result-card mx-auto py-2"
+            className="mx-auto py-2"
             alt=""
             src={process.env.PUBLIC_URL + iconNames[results.level]}
           />

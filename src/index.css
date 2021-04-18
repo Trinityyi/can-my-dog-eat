@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  height: 100%;
+}
+
+#root {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 100%;
+}
+
 .search-input:not(:focus-within) .autocomplete {
   display: none;
 }
