@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <div className="footer p-8 w-full max-w-2xl mx-auto">
+    <footer className="footer p-8 w-full max-w-2xl mx-auto">
       <p className="disclaimer pb-6 text-sm">
         This website does not provide medical advice. The information, including but not limited to,
         text, graphics, images and other materials contained on this website are for informational
@@ -22,23 +22,33 @@ const Footer = () => {
           Source code
         </a>
         <br /> Built with{' '}
-        <a href="https://reactjs.org/" rel="nofollow noreferrer">
+        <a href="https://reactjs.org/" title="ReactJS" rel="nofollow noreferrer" target="_blank">
           ReactJS
         </a>
         , icons made by{' '}
-        <a href="https://feathericons.com/" title="Feather" rel="nofollow noreferrer">
+        <a
+          href="https://feathericons.com/"
+          title="Feather"
+          rel="nofollow noreferrer"
+          target="_blank"
+        >
           Feather
         </a>{' '}
         and{' '}
-        <a href="https://www.freepik.com" title="Freepik" rel="nofollow noreferrer">
+        <a href="https://www.freepik.com" title="Freepik" rel="nofollow noreferrer" target="_blank">
           Freepik
         </a>{' '}
         from{' '}
-        <a href="https://www.flaticon.com/" title="Flaticon" rel="nofollow noreferrer">
+        <a
+          href="https://www.flaticon.com/"
+          title="Flaticon"
+          rel="nofollow noreferrer"
+          target="_blank"
+        >
           www.flaticon.com
         </a>
       </p>
-    </div>
+    </footer>
   );
 };
 

@@ -16,13 +16,14 @@ const Search = () => {
       return food.name.toLowerCase().includes(inputString);
     });
     setInput(input);
-    setFilteredList(inputString === '' ? null : filtered.slice(0, 5));
+    setFilteredList(inputString ? filtered.slice(0, 5) : null);
     setPointer(-1);
   };
 
   const updateResults = (input) => {
+    const inputString = input.toLowerCase();
     const filtered = foodList.find((food) => {
-      return food.name.toLowerCase() === input.toLowerCase();
+      return food.name.toLowerCase() === inputString;
     });
     setInput(input);
     setResult(filtered);

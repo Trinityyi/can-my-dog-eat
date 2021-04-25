@@ -7,7 +7,7 @@ const SearchBar = ({ input, onChange }) => {
         Food Name
       </label>
       <input
-        type="text"
+        type="search"
         name="query"
         className="input text-2xl px-4 py-2 outline-none rounded-lg border border-gray-500 w-full"
         placeholder="Search..."

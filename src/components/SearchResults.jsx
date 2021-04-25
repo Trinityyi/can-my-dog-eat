@@ -9,6 +9,7 @@ const iconNames = {
 
 const Results = ({ results }) => {
   if (results === '') return null;
+
   return (
     <div className="results text-lg w-full max-w-xl">
       {!results ? (
