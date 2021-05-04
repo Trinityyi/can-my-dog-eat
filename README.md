@@ -1,70 +1,25 @@
-# Getting Started with Create React App
+# Can My Dog Eat
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Screenshot](Screenshot.png)
 
-## Available Scripts
+A simple tool that tells you what food is safe for your dog.
 
-In the project directory, you can run:
+[View website](https://canmydogeat.netlify.app/)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Can My Dog Eat** is a simple website where you can look up information for over 100 types of food in regards to feeding them to your dog. Most common food types are included along with a breakdown of what, why and how to feed them to your dog. Just start typing in the search box, select one of the suggested results and learn all you need to know.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Disclaimer
 
-### `npm test`
+**Can My Dog Eat** does not provide medical advice. The information, including but not limited to, text, graphics, images and other materials contained are for informational purposes only. None of the provided material is intended to be a substitution for professional veterinarian advice, diagnosis or treatment. Always seek the advice of your veterinarian with any questions you may have regarding how to feed or medicate your pet. Never disregard professional advice or delay in seeking it because of something you have read on this website!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Credits
 
-### `npm run build`
+Designed and developed by [Isabelle Viktoria Maciohsek](https://github.com/Trinityyi) © 2021
+Built using [React](https://reactjs.org/) and [Tailwind](https://tailwindcss.com/)
+Icons made by [Feather](https://feathericons.com/) and [Freepik](https://www.freepik.com/) from [www.flaticon.com](https://www.flaticon.com/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## License
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The project is licenses under the MIT License.
