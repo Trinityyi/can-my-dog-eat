@@ -1,6 +1,6 @@
 # Can My Dog Eat
 
-![Screenshot](Screenshot.png)
+[![Screenshot](Screenshot.png)](https://canmydogeat.netlify.app/)
 
 A simple tool that tells you what food is safe for your dog.
 
