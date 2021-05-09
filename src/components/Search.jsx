@@ -87,6 +87,7 @@ const Search = () => {
           suggestions={!filteredList ? null : filteredList.map((x) => x.name)}
           onClick={(x) => updateResults(x)}
           selectedIndex={pointer}
+          loading={!foodList || !foodList.length}
         />
       </div>
       <SearchResults results={result} />
