@@ -1,14 +1,49 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import SearchBar from './SearchBar';
 import SearchResults from './SearchResults';
 import Autocomplete from './Autocomplete';
-import foodList from '../foodList';
 
 const Search = () => {
   const [input, setInput] = useState('');
   const [filteredList, setFilteredList] = useState(null);
+  const [foodList, setFoodList] = useState([]);
   const [result, setResult] = useState('');
   const [pointer, setPointer] = useState(-1);
+
+  useEffect(() => {
+    fetch(`${process.env.PUBLIC_URL}/static/foodList.json`)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setFoodList(data);
+      });
+  }, []);
+
+  const updateResults = useCallback(
+    (input) => {
+      const inputString = input.toLowerCase();
+      const filtered = foodList.find((food) => {
+        return food.name.toLowerCase() === inputString;
+      });
+      setInput(input);
+      setResult(filtered);
+      setFilteredList(null);
+      setPointer(-1);
+    },
+    [foodList, setInput, setResult, setFilteredList, setPointer]
+  );
+
+  useEffect(() => {
+    if (!foodList || !foodList.length) return;
+    const callBack = () => {
+      const url = window.location.search;
+      const param = new URLSearchParams(url).get('food');
+      if (param && param.trim().length) updateResults(param);
+    };
+    callBack();
+    window.addEventListener('popstate', callBack);
+  }, [foodList, updateResults]);
 
   const updateInput = (input) => {
     const inputString = input.trim().toLowerCase();
@@ -17,17 +52,6 @@ const Search = () => {
     });
     setInput(input);
     setFilteredList(inputString ? filtered.slice(0, 5) : null);
-    setPointer(-1);
-  };
-
-  const updateResults = (input) => {
-    const inputString = input.toLowerCase();
-    const filtered = foodList.find((food) => {
-      return food.name.toLowerCase() === inputString;
-    });
-    setInput(input);
-    setResult(filtered);
-    setFilteredList(null);
     setPointer(-1);
   };
 
@@ -63,6 +87,7 @@ const Search = () => {
           suggestions={!filteredList ? null : filteredList.map((x) => x.name)}
           onClick={(x) => updateResults(x)}
           selectedIndex={pointer}
+          loading={!foodList || !foodList.length}
         />
       </div>
       <SearchResults results={result} />
