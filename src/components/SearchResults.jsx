@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 const iconNames = {
   Yes: '/static/check-circle.svg',
   'In Moderation': '/static/alert-circle-yellow.svg',
-  Harmful: '/static/alert-circle-red.svg',
+  'Not Recommended': '/static/alert-circle-red.svg',
   Toxic: '/static/x-circle.svg'
 };
 
