@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const iconNames = {
   Yes: '/static/check-circle.svg',
@@ -8,6 +8,15 @@ const iconNames = {
 };
 
 const Results = ({ results }) => {
+  useEffect(() => {
+    if (!results) return;
+    const newParam = results.name.toLowerCase();
+    const url = window.location.search;
+    const param = new URLSearchParams(url).get('food');
+    if (param && param.trim().length && param === newParam) return;
+    window.history.pushState({}, '', `?food=${newParam}`);
+  }, [results]);
+
   if (results === '') return null;
 
   return (

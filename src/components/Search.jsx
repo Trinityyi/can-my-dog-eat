@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import SearchBar from './SearchBar';
 import SearchResults from './SearchResults';
 import Autocomplete from './Autocomplete';
@@ -20,6 +20,31 @@ const Search = () => {
       });
   }, []);
 
+  const updateResults = useCallback(
+    (input) => {
+      const inputString = input.toLowerCase();
+      const filtered = foodList.find((food) => {
+        return food.name.toLowerCase() === inputString;
+      });
+      setInput(input);
+      setResult(filtered);
+      setFilteredList(null);
+      setPointer(-1);
+    },
+    [foodList, setInput, setResult, setFilteredList, setPointer]
+  );
+
+  useEffect(() => {
+    if (!foodList || !foodList.length) return;
+    const callBack = () => {
+      const url = window.location.search;
+      const param = new URLSearchParams(url).get('food');
+      if (param && param.trim().length) updateResults(param);
+    };
+    callBack();
+    window.addEventListener('popstate', callBack);
+  }, [foodList, updateResults]);
+
   const updateInput = (input) => {
     const inputString = input.trim().toLowerCase();
     const filtered = foodList.filter((food) => {
@@ -27,17 +52,6 @@ const Search = () => {
     });
     setInput(input);
     setFilteredList(inputString ? filtered.slice(0, 5) : null);
-    setPointer(-1);
-  };
-
-  const updateResults = (input) => {
-    const inputString = input.toLowerCase();
-    const filtered = foodList.find((food) => {
-      return food.name.toLowerCase() === inputString;
-    });
-    setInput(input);
-    setResult(filtered);
-    setFilteredList(null);
     setPointer(-1);
   };
 
