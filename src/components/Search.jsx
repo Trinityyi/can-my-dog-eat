@@ -1,14 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import SearchBar from './SearchBar';
 import SearchResults from './SearchResults';
 import Autocomplete from './Autocomplete';
-import foodList from '../foodList';
 
 const Search = () => {
   const [input, setInput] = useState('');
   const [filteredList, setFilteredList] = useState(null);
+  const [foodList, setFoodList] = useState([]);
   const [result, setResult] = useState('');
   const [pointer, setPointer] = useState(-1);
+
+  useEffect(() => {
+    fetch(`${process.env.PUBLIC_URL}/static/foodList.json`)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setFoodList(data);
+      });
+  }, []);
 
   const updateInput = (input) => {
     const inputString = input.trim().toLowerCase();
